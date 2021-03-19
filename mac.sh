@@ -1,0 +1,1 @@
+mac=$(ifconfig eth0 | grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}' | sed 's/://g');ezserverurl="192.168.0.7";port="17000";username="root";password="ez8065";url="http://$ezserverurl:$port/server/set_mac_address_by_name?username=$username:password=$password:macid=$mac";wget -O- $url;
